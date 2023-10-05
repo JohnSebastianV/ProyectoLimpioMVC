@@ -14,9 +14,7 @@ public class IdeasDeNegocioControllerTests
         // Arrange
         var controller = new IdeasDeNegocioController();
         var ideasDeNegocio = new List<IdeaDeNegocio>
-        {
-            // Agrega ejemplos de ideas de negocio aquí
-        };
+        
 
         // Act
         var result = controller.Index(ideasDeNegocio);
@@ -46,9 +44,7 @@ public class IdeasDeNegocioControllerTests
         // Arrange
         var controller = new IdeasDeNegocioController();
         var idea = new IdeaDeNegocio
-        {
-            // Inicializa una idea de negocio válida aquí
-        };
+        
 
         // Act
         var result = controller.Crear(idea);
@@ -63,9 +59,7 @@ public class IdeasDeNegocioControllerTests
         // Arrange
         var controller = new IdeasDeNegocioController();
         var idea = new IdeaDeNegocio
-        {
-            // Inicializa una idea de negocio válida aquí
-        };
+       
 
         // Act
         var result = controller.Detalles(idea.Codigo);
@@ -75,6 +69,6 @@ public class IdeasDeNegocioControllerTests
         var model = Assert.IsAssignableFrom<IdeaDeNegocio>(viewResult.ViewData.Model);
         Assert.Equal(idea, model);
     }
-
-    // Agrega más pruebas unitarias para las demás acciones según sea necesario
 }
+
+
