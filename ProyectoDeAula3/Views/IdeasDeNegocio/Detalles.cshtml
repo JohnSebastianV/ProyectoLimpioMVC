@@ -1,0 +1,57 @@
+﻿@model ProyectoDeAula3.Models.IdeaDeNegocio
+
+<h2>Detalles de Idea de Negocio</h2>
+
+<p><strong>Código:</strong> @Model.Codigo</p>
+<p><strong>Nombre:</strong> @Model.Nombre</p>
+<p><strong>Impacto Social o Económico:</strong> @Model.ImpactoSocialOEconomico</p>
+<p><strong>Valor de Inversión:</strong> @Model.ValorInversion</p>
+<p><strong>Ingresos Generados en los Primeros 3 Años:</strong> @Model.IngresosGenerados3Anios</p>
+
+<h3>Integrantes del Equipo</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identificación</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Rol</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var integrante in Model.Integrantes)
+        {
+            <tr>
+                <td>@integrante.Identificacion</td>
+                <td>@integrante.Nombre</td>
+                <td>@integrante.Apellidos</td>
+                <td>@integrante.Rol</td>
+                <td>@integrante.Email</td>
+                <td>
+                    <form asp-controller="IdeasDeNegocio" asp-action="EliminarIntegrante" method="post">
+                        <input type="hidden" name="codigo" value="@Model.Codigo" />
+                        <input type="hidden" name="identificacion" value="@integrante.Identificacion" />
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Editar Valor de la Inversión y Total de Ingresos</h3>
+<form asp-controller="IdeasDeNegocio" asp-action="EditarInversionIngresos" method="post">
+    <input type="hidden" name="codigo" value="@Model.Codigo" />
+    <div class="form-group">
+        <label for="ValorInversion">Nuevo Valor de Inversión:</label>
+        <input type="text" class="form-control" id="ValorInversion" name="valorInversion" value="@Model.ValorInversion" />
+    </div>
+    <div class="form-group">
+        <label for="IngresosGenerados3Anios">Nuevo Total de Ingresos en 3 Años:</label>
+        <input type="text" class="form-control" id="IngresosGenerados3Anios" name="ingresos3Anios" value="@Model.IngresosGenerados3Anios" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+

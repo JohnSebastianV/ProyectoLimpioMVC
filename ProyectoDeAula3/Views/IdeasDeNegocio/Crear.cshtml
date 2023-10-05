@@ -1,0 +1,69 @@
+﻿@model ProyectoDeAula3.Models.IdeaDeNegocio
+
+<h2>Crear Idea de Negocio</h2>
+
+<form asp-action="Crear" method="post">
+
+    <div class="form-group">
+        <label for="Nombre">Nombre de la idea de negocio:</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="ImpactoSocialOEconomico">Impacto Social o Económico:</label>
+        <input type="text" class="form-control" id="ImpactoSocialOEconomico" name="ImpactoSocialOEconomico">
+    </div>
+    <div class="form-group">
+        <label for="ValorInversion">Valor de Inversión:</label>
+        <input type="number" class="form-control" id="ValorInversion" name="ValorInversion">
+    </div>
+    <div class="form-group">
+        <label for="IngresosGenerados3Anios">Ingresos Generados en los Primeros 3 Años:</label>
+        <input type="number" class="form-control" id="IngresosGenerados3Anios" name="IngresosGenerados3Anios">
+    </div>
+
+    <div class="form-group">
+        <label for="DepartamentosBeneficiados">Departamentos Beneficiados:</label>
+        <select multiple class="form-control" id="DepartamentosBeneficiados" name="DepartamentosBeneficiados">
+            <option value="1">Departamento 1</option>
+            <option value="2">Departamento 2</option>
+            <option value="3">Departamento 3</option>
+            <!-- Agrega más departamentos según sea necesario -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Integrantes">Integrantes del Equipo:</label>
+        <table class="table" id="Integrantes">
+            <thead>
+                <tr>
+                    <th>Identificación</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Rol</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" name="Integrantes[0].Identificacion"></td>
+                    <td><input type="text" class="form-control" name="Integrantes[0].Nombre"></td>
+                    <td><input type="text" class="form-control" name="Integrantes[0].Apellidos"></td>
+                    <td><input type="text" class="form-control" name="Integrantes[0].Rol"></td>
+                    <td><input type="text" class="form-control" name="Integrantes[0].Email"></td>
+                </tr>
+                <!-- Agrega más filas para más integrantes según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group">
+        <label for="Herramientas4RI">Herramientas de la 4RI utilizadas:</label>
+        <select multiple class="form-control" id="Herramientas4RI" name="Herramientas4RI">
+            <option value="Herramienta1">Herramienta 1</option>
+            <option value="Herramienta2">Herramienta 2</option>
+            <option value="Herramienta3">Herramienta 3</option>
+            <!-- Agrega más herramientas según sea necesario -->
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

@@ -1,0 +1,40 @@
+﻿@model List<ProyectoDeAula3.Models.IdeaDeNegocio>
+
+<h2>Lista de Ideas de Negocio</h2>
+
+<p><a asp-action="Crear">Agregar Nueva Idea de Negocio</a></p>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Impacto Social o Económico</th>
+                <th>Valor de Inversión</th>
+                <th>Ingresos en 3 Años</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var idea in Model)
+            {
+                <tr>
+                    <td>@idea.Codigo</td>
+                    <td>@idea.Nombre</td>
+                    <td>@idea.ImpactoSocialOEconomico</td>
+                    <td>@idea.ValorInversion</td>
+                    <td>@idea.IngresosGenerados3Anios</td>
+                    <td><a asp-action="Detalles" asp-route-codigo="@idea.Codigo">Ver Detalles</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay ideas de negocio disponibles.</p>
+}
+
