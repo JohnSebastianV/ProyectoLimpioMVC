@@ -1,0 +1,14 @@
+﻿@model ProyectoDeAula3.Models.IdeaDeNegocio
+
+<h2>Idea de Negocio con Mayor Inversión en Infraestructura</h2>
+@if (Model != null)
+{
+    <p>Nombre de la Idea de Negocio: @Model.Nombre</p>
+    <p>Inversión en Infraestructura: @Model.ValorInversion</p>
+}
+else
+{
+    <p>No hay ideas de negocio con inversión en infraestructura.</p>
+}
+
+

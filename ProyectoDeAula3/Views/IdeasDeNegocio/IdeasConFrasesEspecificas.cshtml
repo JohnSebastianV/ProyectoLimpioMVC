@@ -1,0 +1,17 @@
+﻿@model List<ProyectoDeAula3.Models.IdeaDeNegocio>
+
+<h2>Ideas de Negocio con Frases Específicas en su Impacto</h2>
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var idea in Model)
+        {
+            <li>@idea.Nombre</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay ideas de negocio con las frases específicas en su impacto.</p>
+}
+

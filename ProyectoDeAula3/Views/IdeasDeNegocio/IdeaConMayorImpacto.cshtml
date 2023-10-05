@@ -1,0 +1,10 @@
+﻿@model Tuple<ProyectoDeAula3.Models.IdeaDeNegocio, ProyectoDeAula3.Models.IdeaDeNegocio>
+
+<!-- Mostrar información de la idea con mayor impacto -->
+<h2>Idea con Mayor Impacto</h2>
+@Html.DisplayFor(model => model.Item1)
+
+<!-- Mostrar información de la idea con mayor total de ingresos -->
+<h2>Idea con Mayor Total de Ingresos</h2>
+@Html.DisplayFor(model => model.Item2)
+

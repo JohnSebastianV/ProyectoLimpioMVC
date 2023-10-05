@@ -15,6 +15,7 @@ namespace ProyectoDeAula3.Models
         public decimal IngresosGenerados3Anios { get; set; }
         public List<IntegranteEquipo> Integrantes { get; set; }
         public List<string> Herramientas4RI { get; set; }
+        public decimal ValorInversionInfraestructura { get; set; }
     }
 
     public class Departamento
@@ -22,6 +23,9 @@ namespace ProyectoDeAula3.Models
         public int Codigo { get; set; }
         public string Nombre { get; set; }
     }
+
+    
+
 
     public class IntegranteEquipo
     {

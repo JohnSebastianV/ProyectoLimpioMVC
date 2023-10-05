@@ -1,0 +1,22 @@
+﻿@model ProyectoDeAula3.Models.IdeaDeNegocio
+
+<h2>Eliminar Integrante del Equipo</h2>
+<p>¿Estás seguro de que deseas eliminar al integrante con Identificación: @ViewBag.Identificacion?</p>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Codigo) <!-- Campo oculto para el código de la idea de negocio -->
+    @Html.Hidden("Identificacion", ViewBag.Identificacion) <!-- Campo oculto para la identificación del integrante -->
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Confirmar Eliminación" class="btn btn-danger" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Cancelar", "Detalles", new { codigo = Model.Codigo }) <!-- Enlace para cancelar la eliminación y volver a la vista Detalles -->
+</div>
+
+

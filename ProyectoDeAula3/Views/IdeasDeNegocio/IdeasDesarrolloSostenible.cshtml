@@ -1,0 +1,10 @@
+﻿@model List<ProyectoDeAula3.Models.IdeaDeNegocio>
+
+<h2>Ideas de Negocio con Impacto en Desarrollo Sostenible</h2>
+<ul>
+    @foreach (var idea in Model)
+    {
+        <li>@idea.Nombre</li>
+    }
+</ul>
+

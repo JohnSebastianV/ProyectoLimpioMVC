@@ -1,0 +1,20 @@
+﻿@model List<ProyectoDeAula3.Models.IdeaDeNegocio>
+
+<h2>Ideas de Negocio con Herramientas de la 4RI</h2>
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var idea in Model)
+        {
+            <li>@idea.Nombre</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay ideas de negocio con herramientas de la 4RI.</p>
+}
+
+
+
+

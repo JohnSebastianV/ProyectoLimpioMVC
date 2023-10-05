@@ -182,6 +182,17 @@
     <Content Include="Views\IdeasDeNegocio\Crear.cshtml" />
     <Content Include="Views\IdeasDeNegocio\Detalles.cshtml" />
     <Content Include="Views\IdeasDeNegocio\Index.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeaConMayorImpacto.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeasMasRentables.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeasConImpactoEnMasDe3Departamentos.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeasConHerramientas4RI.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeasDesarrolloSostenible.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeasConFrasesEspecificas.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\IdeaConMayorInversionEnInfraestructura.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\AgregarIntegrante.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\EliminarIntegrante.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\EditarInversionIngresos.cshtml" />
+    <Content Include="Views\IdeasDeNegocio\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,15 +20,19 @@
         <label for="IngresosGenerados3Anios">Ingresos Generados en los Primeros 3 Años:</label>
         <input type="number" class="form-control" id="IngresosGenerados3Anios" name="IngresosGenerados3Anios">
     </div>
+    <div class="form-group">
+        <label for="ValorInversionInfraestructura">Valor de Inversión de Infraestructura, Nube u Onpremise:</label>
+        <input type="number" class="form-control" id="ValorInversionInfraestructura" name="ValorInversionInfraestructura">
+    </div>
 
     <div class="form-group">
-        <label for="DepartamentosBeneficiados">Departamentos Beneficiados:</label>
-        <select multiple class="form-control" id="DepartamentosBeneficiados" name="DepartamentosBeneficiados">
-            <option value="1">Departamento 1</option>
-            <option value="2">Departamento 2</option>
-            <option value="3">Departamento 3</option>
-            <!-- Agrega más departamentos según sea necesario -->
-        </select>
+        @Html.LabelFor(model => model.DepartamentosBeneficiados, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.DepartamentosBeneficiados,
+                new SelectList(ViewBag.Departamentos, "Codigo", "Nombre"),
+                new { multiple = "multiple" })
+            @Html.ValidationMessageFor(model => model.DepartamentosBeneficiados, "", new { @class = "text-danger" })
+        </div>
     </div>
     <div class="form-group">
         <label for="Integrantes">Integrantes del Equipo:</label>
@@ -55,13 +59,13 @@
         </table>
     </div>
     <div class="form-group">
-        <label for="Herramientas4RI">Herramientas de la 4RI utilizadas:</label>
-        <select multiple class="form-control" id="Herramientas4RI" name="Herramientas4RI">
-            <option value="Herramienta1">Herramienta 1</option>
-            <option value="Herramienta2">Herramienta 2</option>
-            <option value="Herramienta3">Herramienta 3</option>
-            <!-- Agrega más herramientas según sea necesario -->
-        </select>
+        @Html.LabelFor(model => model.Herramientas4RI, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Herramientas4RI,
+                (SelectList)ViewBag.Herramientas4RI,
+                new { multiple = "multiple" })
+            @Html.ValidationMessageFor(model => model.Herramientas4RI, "", new { @class = "text-danger" })
+        </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Guardar</button>
